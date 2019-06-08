@@ -1,6 +1,6 @@
 package testCases;
 
-import base.MobileAPI2;
+import page.MobileAPI2;
 
 public class RegressionTestCases extends MobileAPI2 {
 

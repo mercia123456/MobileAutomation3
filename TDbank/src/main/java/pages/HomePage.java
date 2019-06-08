@@ -1,6 +1,6 @@
 package pages;
 
-import base.MobileAPI2;
+import page.MobileAPI2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

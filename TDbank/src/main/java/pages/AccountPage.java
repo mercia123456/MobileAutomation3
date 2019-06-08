@@ -1,6 +1,6 @@
 package pages;
 
-import base.MobileAPI2;
+import page.MobileAPI2;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -9,6 +9,7 @@ public class AccountPage extends MobileAPI2 {
     WebElement userName;
 
     public void sendKeyAccount() {
+
         userName.sendKeys("example");
     }
 
