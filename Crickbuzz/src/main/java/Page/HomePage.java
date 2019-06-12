@@ -4,13 +4,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import page.MobileAPI2;
 
-import java.util.concurrent.Callable;
 
 public class HomePage extends MobileAPI2 {
 
-
-   /* @FindBy(xpath = "//android.view.View[@content-desc=\"Voice search\"]")
-    public WebElement Voicesearch;*/
+    @FindBy(id = "com.cricbuzz.android:id/toolbar")
+    public WebElement CrickBzz;
 
     @FindBy(xpath = "//android.widget.TextView[@='Settings']")
     public WebElement settings;
@@ -18,11 +16,14 @@ public class HomePage extends MobileAPI2 {
     @FindBy(xpath = "//android.widget.TextView[@='Dark Theme']")
     public WebElement DarkThem;
 
-    @FindBy(xpath = "(//android.widget.TextView[@content-desc=\"Cricbuzz\"])[2]")
-    public WebElement CrickBzz;
+    @FindBy(id = "com.google.android.apps.nexuslauncher:id/apps_list_view")
+    public WebElement ListView;
 
     @FindBy(xpath = "(//android.widget.TextView[@content-desc=\"Photos\"])[2]")
     public WebElement Photos;
+
+    @FindBy(id = "com.google.android.apps.photos:id/negative_button")
+    public WebElement NOTNOW;
 
     @FindBy(xpath = "(//android.widget.TextView[@content-desc=\"Maps\"])[2]")
     public WebElement Maps;
@@ -30,8 +31,8 @@ public class HomePage extends MobileAPI2 {
     @FindBy(xpath = "//android.widget.EditText[@='Search here']")
     public WebElement MapsSearch;
 
-    @FindBy(xpath = "(//android.widget.TextView[@content-desc=\"Settings\"])[2]")
-    public WebElement Settings;
+    @FindBy(xpath = "(//android.widget.TextView[@content-desc=\"Calculator\"])[2]")
+    public WebElement Calculator;
 
     @FindBy(xpath = "(//android.widget.TextView[@content-desc=\"Calendar\"])[2]")
     public WebElement Calender;
@@ -39,11 +40,11 @@ public class HomePage extends MobileAPI2 {
     @FindBy(xpath = "//android.widget.TextView[@content-desc=\"Appium Settings\"]")
     public WebElement AppiumSetting;
 
-    @FindBy(xpath = "//android.widget.TextView[@content-desc=\"Calculator\"]")
-    public WebElement Calculator;
-
     @FindBy(xpath = "/android.widget.TextView[@content-desc=\"Camera\"]")
     public WebElement Camera;
+
+    @FindBy(id = "com.android.chrome:id/terms_accept")
+    public WebElement ACCEPTAndCONTINUE;
 
     @FindBy(xpath = "//android.widget.TextView[@content-desc=\"Chrome\"]")
     public WebElement Chrome;
@@ -51,20 +52,38 @@ public class HomePage extends MobileAPI2 {
     @FindBy(xpath = "//android.widget.TextView[@content-desc=\"Clock\"]")
     public WebElement Clock;
 
-    @FindBy(xpath = "//android.widget.TextView[@content-desc=\"Contacts\"]")
+    @FindBy(xpath = "//android.widget.TextView[@='ALARM']")
+    public WebElement ALARM;
+
+    @FindBy(xpath = "(//android.widget.TextView[@content-desc=\"Contacts\"])[1]")
     public WebElement Contacts;
+
+    @FindBy(xpath = "//android.widget.Button[@='ADD ACCOUNT']")
+    public WebElement ADDACCOUNT;
 
     @FindBy(xpath = "//android.widget.TextView[@content-desc=\"Drive\"]")
     public WebElement Driver;
 
+    @FindBy(xpath = "//android.view.View[@='Sign in']")
+    public WebElement Signin;
+
     @FindBy(xpath = "//android.widget.TextView[@content-desc=\"Files\"]")
     public WebElement Files;
+
+    @FindBy(xpath = "//android.widget.TextView[@='Modified']")
+    public WebElement Modified;
 
     @FindBy(xpath = "//android.widget.TextView[@content-desc=\"Gmail\"]")
     public WebElement Gmail;
 
+    @FindBy(xpath = "//android.widget.TextView[@='New in Gmail']")
+    public WebElement NewinGmail;
+
     @FindBy(xpath = "//android.widget.TextView[@content-desc=\"Google\"]")
     public WebElement Google;
+
+    @FindBy(xpath = "//android.widget.TextView[@='SIGN IN']")
+    public WebElement SIGNIN;
 
     @FindBy(xpath = "//android.widget.TextView[@content-desc=\"Messages\"]")
     public WebElement Messages;
@@ -72,7 +91,7 @@ public class HomePage extends MobileAPI2 {
     @FindBy(xpath = "//android.widget.TextView[@content-desc=\"Phone\"]")
     public WebElement Phone;
 
-    @FindBy(xpath = "//android.widget.TextView[@content-desc=\"Play Movies & TV\"]")
+    @FindBy(xpath = "//android.widget.TextView[@content-desc=\"Play Movies & TV\"]\n")
     public WebElement PlayMoviesAndTV;
 
     @FindBy(xpath = "//android.widget.TextView[@content-desc=\"WebView Browser Tester\"]")
@@ -82,28 +101,30 @@ public class HomePage extends MobileAPI2 {
     public WebElement YouTube;
 
 
-
-    public void ClickVoicesearch() {
-        //Voicesearch.sendKeys();
-
-    }
-
-    public void ClickSettings(){
-        settings.sendKeys();
+    public void sandKeyCrickBuzz() throws InterruptedException {
+        CrickBzz.click();
+        Thread.sleep(5000);
 
     }
 
-    public void setDarkThem(){
+    public void sandKeySettings() {
+        settings.click();
+
+    }
+
+    public void sandKeyDarkThem() {
         DarkThem.click();
 
     }
-    public void ClickCrickBzz(){
-        CrickBzz.sendKeys();
+    public void setListView(){
+        ListView.click();
 
     }
 
-    public void setPhotos(){
+    public void setPhotos(int number){
         Photos.click();
+        NOTNOW.click();
+        Photos.sendKeys();
 
     }
     public void setMaps(String address){
@@ -111,17 +132,15 @@ public class HomePage extends MobileAPI2 {
         MapsSearch.sendKeys();
 
     }
-    public void setSettings(){
-        Settings.click();
 
-    }
-    public void setCalender(){
+    public void sandKeyCalender(){
         Calender.click();
+
 
     }
     public void setAppiumSetting() {
-
         AppiumSetting.click();
+
     }
     public void setCalculator(){
         Calculator.click();
@@ -131,59 +150,69 @@ public class HomePage extends MobileAPI2 {
        Camera.click();
 
     }
-    public void setChrome(){
+    public void sandKeyChrome(){
         Chrome.click();
+        ACCEPTAndCONTINUE.click();
+
 
     }
-    public void setClock(){
+    public void sandKeyClock(){
         Clock.click();
+        ALARM.click();
 
     }
-    public void setContacts(){
+    public void sandKeyContacts(){
         Contacts.click();
+        ADDACCOUNT.click();
+
 
     }
-    public void setDriver(){
+    public void sandKeyDriver(){
         Driver.click();
+        Signin.click();
 
     }
 
-    public void setFiles(){
+    public void sandKeyFiles(){
         Files.click();
+        Modified.click();
 
     }
 
-    public void setGmail(){
+    public void sandKeyGmail(){
         Gmail.click();
+        NewinGmail.click();
 
     }
-    public void setGoogle(){
+    public void sandKeyGoogle(){
         Google.click();
+        SIGNIN.click();
 
     }
-    public void setMessages(){
+    public void sandKeyMessages(){
        Messages.click();
 
     }
 
-    public void setPhone(){
+    public void sandKeyPhone(){
        Phone.click();
 
     }
 
-    public void setPlayMoviesAndTV(){
+    public void sandKeyPlayMoviesAndTV(){
         PlayMoviesAndTV.click();
 
     }
 
-    public void setWebBrowserTester(){
+    public void sandKeyWebBrowserTester(){
         WebBrowserTester.click();
 
 
     }
 
-    public void setYouTube(){
+    public void sandKeyYouTube()throws InterruptedException{
         YouTube.click();
+        Thread.sleep(5000);
 
     }
 }

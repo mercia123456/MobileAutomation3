@@ -8,12 +8,10 @@ import page.MobileAPI2;
 
 public class TestHomePage extends MobileAPI2 {
 
-    HomePage testHomePage;
+    HomePage homePage;
 
     @BeforeMethod
-    public void intializationSignInPage() {
-
-        testHomePage = PageFactory.initElements(appiumDriver, HomePage.class);
+    public void intializationSignInPage() { homePage = PageFactory.initElements(appiumDriver, HomePage.class);
     }
 
     /*public void testAccountFunctionallity() {
@@ -31,145 +29,141 @@ public class TestHomePage extends MobileAPI2 {
         functionSwipe("up", 200, 200);
 
     }
+
     @Test(enabled = false)
+    public void testCrickBuzz() {
+        homePage.sandKeyCrickBuzz();
+
+    }
+
+    @Test
     public void testSettings() {
-        testHomePage.ClickSettings();
+        homePage.sandKeySettings();
 
     }
 
     @Test
     public void testDarkThem() {
-        testHomePage.setDarkThem();
+        homePage.sandKeyDarkThem();
 
     }
     @Test
-    public void testCrickBzz() {
-        testHomePage.ClickCrickBzz();
+    public void ClickListView() {
+        homePage.setListView();
 
     }
-
-
     @Test
-    public void testPhotos() {
-        testHomePage.setPhotos();
+    public void ClickPhotos() {
+        homePage.setPhotos(10);
+
 
     }
 
     @Test
     public void testMaps() {
-        testHomePage.setMaps("woodside");
+        homePage.setMaps("woodside");
 
     }
 
-    @Test
-    public void ClickSettings() {
-        testHomePage.setSettings();
-
-    }
 
     @Test
     public void testCalender() {
-        testHomePage.setCalender();
+        homePage.sandKeyCalender();
 
     }
 
     @Test
     public void clicAppiumSetting() {
-        testHomePage.setAppiumSetting();
+        homePage.setAppiumSetting();
 
     }
 
     @Test
     public void testCalculator() {
-        testHomePage.setCalculator();
+       homePage.setCalculator();
 
     }
 
     @Test
     public void testCamera() {
-        testHomePage.setCamera();
+        homePage.setCamera();
 
     }
 
     @Test
     public void testChrome() {
-        testHomePage.setChrome();
+        homePage.sandKeyChrome();
 
     }
 
     @Test
     public void testClock() {
-        testHomePage.setClock();
+        homePage.sandKeyClock();
 
     }
 
     @Test
     public void testContacts() {
-        testHomePage.setContacts();
+       homePage.sandKeyContacts();
 
 
     }
 
     @Test
     public void testDriver() {
-        testHomePage.setDriver();
+       homePage.sandKeyDriver();
 
     }
 
     @Test
     public void testFiles() {
-        testHomePage.setFiles();
+        homePage.sandKeyFiles();
 
     }
 
     @Test
     public void testGmail() {
-        testHomePage.setGmail();
+        homePage.sandKeyGmail();
 
     }
 
     @Test
     public void testGoogle() {
-        testHomePage.setGoogle();
+        homePage.sandKeyGoogle();
 
     }
 
     @Test
     public void testMessages() {
-        testHomePage.setMessages();
-
+       homePage.sandKeyMessages();
 
     }
 
     @Test
     public void testPhone() {
-        testHomePage.setPhone();
+        homePage.sandKeyPhone();
 
 
     }
 
     @Test
     public void testPlayMoviesAndTV() {
-        testHomePage.setPlayMoviesAndTV();
+        homePage.sandKeyPlayMoviesAndTV();
 
 
     }
 
     @Test
     public void testWebBrowserTester() {
-        testHomePage.setWebBrowserTester();
+       homePage.sandKeyWebBrowserTester();
 
 
     }
 
     @Test
     public void testYouTube() {
-        testHomePage.setYouTube();
+        homePage.sandKeyYouTube();
 
 
     }
 }
-
-
-
-
